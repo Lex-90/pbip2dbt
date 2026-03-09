@@ -410,4 +410,4 @@ This tool builds on the work of the Power BI, dbt, and Rust communities:
 
 ## License
 
-[MIT](./LICENSE)
+[GPL-3.0](./LICENSE)
