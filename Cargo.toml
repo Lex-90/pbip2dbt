@@ -1,0 +1,58 @@
+[package]
+name = "pbip2dbt"
+version = "0.1.0"
+edition = "2021"
+description = "Translate Power BI Desktop Projects (PBIP) into dbt projects"
+license = "MIT"
+readme = "README.md"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+zip = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+sha2 = "0.10"
+thiserror = "2"
+log = "0.4"
+env_logger = "0.11"
+deunicode = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+
+[dev-dependencies]
+insta = { version = "1", features = ["yaml"] }
+tempfile = "3"
+pretty_assertions = "1"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[lints.rust]
+unsafe_code = "forbid"
+dead_code = "warn"
+missing_docs = "warn"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+module_name_repetitions = "allow"
+must_use_candidate = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+cast_possible_truncation = "allow"
+cast_precision_loss = "allow"
+cast_sign_loss = "allow"
+too_many_lines = "allow"
+manual_let_else = "allow"
+similar_names = "allow"
+single_match_else = "allow"
+struct_excessive_bools = "allow"
+doc_markdown = "allow"
+unnecessary_wraps = "allow"
+unused_self = "allow"
+fn_params_excessive_bools = "allow"
+wildcard_imports = "allow"
+
